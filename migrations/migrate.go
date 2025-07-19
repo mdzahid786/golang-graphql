@@ -9,7 +9,7 @@ import (
 
 func Migrate() {
 	db.InitDB()
-	err:= db.DB.AutoMigrate(&model.User{})
+	err:= db.DB.AutoMigrate(&model.User{}, &model.Todo{})
 	if err != nil {
 		log.Fatal(err)
 	}
