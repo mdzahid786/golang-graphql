@@ -6,19 +6,24 @@ type Todo {
   id: Int!
   text: String!
   done: Boolean!
-  userId: Int!
+  user_id: Int!
   user: User!
 }
 
 type User {
   id: Int!
   name: String!
-  age: Int!
+  email: String!
+  password: String!
+  token: String!
+  todos: [Todo!]!
 }
 
 type Query {
-  todos: [Todo!]!
   users: [User!]!
+  todos: [Todo!]!
+  login(email: String!, password: String!): User!
+  me: User!
 }
 
 input NewTodo {
@@ -26,6 +31,13 @@ input NewTodo {
   userId: String!
 }
 
+input NewUser {
+  name: String!
+  email: String!
+  password: String!
+}
+
 type Mutation {
   createTodo(input: NewTodo!): Todo!
+  createUser(input: NewUser): User!
 }

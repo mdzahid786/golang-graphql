@@ -4,8 +4,10 @@ go 1.24.3
 
 require (
 	github.com/99designs/gqlgen v0.17.76
+	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/joho/godotenv v1.5.1
 	github.com/vektah/gqlparser/v2 v2.5.30
+	golang.org/x/crypto v0.40.0
 	gorm.io/driver/mysql v1.6.0
 	gorm.io/gorm v1.30.0
 )
